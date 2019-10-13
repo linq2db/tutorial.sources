@@ -1,0 +1,16 @@
+﻿<#@ template language="C#" debug="True" hostSpecific="True"                        #>
+<#@ output extension=".generated.cs"                                               #>
+<#@ include file="$(LinqToDBT4SQLiteTemplatesDirectory)LinqToDB.SQLite.Tools.ttinclude" #>
+<#@ include file="$(LinqToDBT4SQLiteTemplatesDirectory)PluralizationService.ttinclude"  #>
+<# //@ include file="$(ProjectDir)LinqToDB.Templates\LinqToDB.SQLite.Tools.ttinclude" #>
+<# //@ include file="$(ProjectDir)LinqToDB.Templates\PluralizationService.ttinclude"  #>
+<#
+
+	NamespaceName   = "LinqToDB.Tutorial.Models";
+	DataContextName = "TutorialDataConnection";
+	BaseEntityClass = "IId";
+
+	LoadSQLiteMetadata(this.Host.ResolvePath(@"..\..\DB\"), "database.sqlite");
+
+	GenerateModel();
+#>
