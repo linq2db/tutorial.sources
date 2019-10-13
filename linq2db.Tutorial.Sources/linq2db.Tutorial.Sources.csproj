@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <PackageReference Include="linq2db.SQLite" Version="2.9.1" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="3.0.0" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.111" />
   </ItemGroup>
 
   <ItemGroup>

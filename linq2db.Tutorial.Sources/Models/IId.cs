@@ -6,6 +6,6 @@ namespace LinqToDB.Tutorial.Models
 {
 	public interface IId
 	{
-		public long Id { get; set; }
+		long Id { get; set; }
 	}
 }
