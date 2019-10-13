@@ -11,14 +11,8 @@ namespace LinqToDB.Tutorial
 		{
 			var path = System.IO.Path.GetFullPath(@"..\..\..\..\DB\database.sqlite");
 
-			// Зададим конфигурацию
-			DataConnection.AddOrSetConfiguration("*", $"Data Source={path};", ProviderName.SQLiteClassic);
-
-			// Зададим конфигурацию по умолчанию
-			DataConnection.DefaultConfiguration = "*";
-
 			// Создадим соединения
-			using (var db = new DataConnection())
+			using (var db = new DataConnection(ProviderName.SQLiteClassic, $"Data Source={path};"))
 			{
 				// Создадим объект для выполнения запроса
 				IQueryable<Customer> customersTable = db.GetTable<Customer>();
