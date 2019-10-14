@@ -9,13 +9,8 @@ namespace LinqToDB.Tutorial
 	{
 		static void Main(string[] args)
 		{
-			var path = System.IO.Path.GetFullPath(@"..\..\..\..\DB\database.sqlite");
-
 			// Зададим конфигурацию
-			DataConnection.AddOrSetConfiguration("*", $"Data Source={path};", ProviderName.SQLiteClassic);
-
-			// Зададим конфигурацию по умолчанию
-			DataConnection.DefaultConfiguration = "*";
+			DataConnection.DefaultSettings = new LinqToDBSettings();
 
 			// Создадим соединения
 			using (var db = new DataConnection())
