@@ -42,5 +42,28 @@ namespace LinqToDB.Tutorial.Tests
 				Assert.AreNotEqual(0, res);
 			}
 		}
+
+		[Test]
+		public void InsertWithInt64IdentityTest()
+		{
+			using (var db = new TutorialDataConnection())
+			{
+				var customer = new Customer()
+				{
+					FullName = GenerateName(),
+					Phone = GeneratePhone(),
+					RegistrationTime = DateTime.Now
+				};
+
+				var id1 = db.InsertWithInt64Identity(customer);
+				Assert.AreNotEqual(0, id1);
+
+				var id2 = db.InsertWithInt64Identity(customer);
+				Assert.AreNotEqual(0, id2);
+
+				Assert.AreEqual(id1 + 1, id2);
+			}
+		}
+
 	}
 }
