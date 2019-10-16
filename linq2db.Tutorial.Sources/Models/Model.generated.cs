@@ -44,9 +44,10 @@ namespace LinqToDB.Tutorial.Models
 	[Table("Customer")]
 	public partial class Customer : IId
 	{
-		[PrimaryKey, Identity] public long   Id       { get; set; } // integer
-		[Column,     Nullable] public string FullName { get; set; } // varchar(50)
-		[Column,     Nullable] public string Phone    { get; set; } // varchar(15)
+		[PrimaryKey, Identity] public long     Id               { get; set; } // integer
+		[Column,     NotNull ] public string   FullName         { get; set; } // varchar(50)
+		[Column,     NotNull ] public string   Phone            { get; set; } // varchar(15)
+		[Column,     NotNull ] public DateTime RegistrationTime { get; set; } // datetime
 	}
 
 	public static partial class TableExtensions
