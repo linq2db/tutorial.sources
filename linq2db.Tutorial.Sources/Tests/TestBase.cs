@@ -86,7 +86,7 @@ namespace LinqToDB.Tutorial.Tests
 			var p3 = Random.Next(0, 99);
 			var p4 = Random.Next(0, 99);
 
-			return $"{Properties.Resources.PhonePrefix} {p1} {p2} {p3} {p4}";
+			return $"{Properties.Resources.PhonePrefix} {p1} {p2:000} {p3:00} {p4:00}";
 		}
 	}
 }

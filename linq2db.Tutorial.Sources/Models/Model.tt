@@ -12,5 +12,7 @@
 
 	LoadSQLiteMetadata(this.Host.ResolvePath(@"..\..\DB\"), "database.sqlite");
 
+	GetColumn("Customer", "RegistrationTime").SkipOnInsert = true;
+
 	GenerateModel();
 #>
