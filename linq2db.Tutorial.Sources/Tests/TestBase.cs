@@ -25,10 +25,12 @@ namespace LinqToDB.Tutorial.Tests
 		/// </summary>
 		static TestBase()
 		{
-			var path = System.IO.Path.GetFullPath(@"..\..\..\..\DB\database.sqlite");
+			var path1 = System.IO.Path.GetFullPath(@"..\..\..\..\DB\central.sqlite");
+			var path2 = System.IO.Path.GetFullPath(@"..\..\..\..\DB\database.sqlite");
 
 			// Зададим конфигурацию
-			DataConnection.AddOrSetConfiguration("*", $"Data Source={path};", ProviderName.SQLiteClassic);
+			DataConnection.AddOrSetConfiguration("*",   $"Data Source={path1};", ProviderName.SQLiteClassic);
+			DataConnection.AddOrSetConfiguration("low", $"Data Source={path2};", ProviderName.SQLiteClassic);
 
 			// Зададим конфигурацию по умолчанию
 			DataConnection.DefaultConfiguration = "*";

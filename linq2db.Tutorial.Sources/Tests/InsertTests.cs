@@ -141,5 +141,24 @@ namespace LinqToDB.Tutorial.Tests
 				Assert.AreNotEqual(0, res);
 			}
 		}
+
+		[Test, Explicit]
+		public void Insert100Test()
+		{
+			using (var db = new TutorialDataConnection())
+			{
+				for (var i = 0; i < 100; i++)
+				{
+					var customer = new Customer()
+					{
+						FullName = GenerateName(),
+						Phone    = GeneratePhone()
+					};
+
+					var res = db.Insert(customer);
+					Assert.AreNotEqual(0, res);
+				}
+			}
+		}
 	}
 }

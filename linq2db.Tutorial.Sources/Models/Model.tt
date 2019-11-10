@@ -10,7 +10,7 @@
 	DataContextName = "TutorialDataConnection";
 	BaseEntityClass = "IId";
 
-	LoadSQLiteMetadata(this.Host.ResolvePath(@"..\..\DB\"), "database.sqlite");
+	LoadSQLiteMetadata(this.Host.ResolvePath(@"..\..\DB\"), "central.sqlite");
 
 	GetColumn("Customer", "RegistrationTime").SkipOnInsert = true;
 

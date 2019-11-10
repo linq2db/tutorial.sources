@@ -16,8 +16,8 @@ using LinqToDB.Mapping;
 namespace LinqToDB.Tutorial.Models
 {
 	/// <summary>
-	/// Database       : database
-	/// Data Source    : database
+	/// Database       : central
+	/// Data Source    : central
 	/// Server Version : 3.19.3
 	/// </summary>
 	public partial class TutorialDataConnection : LinqToDB.Data.DataConnection
@@ -44,10 +44,11 @@ namespace LinqToDB.Tutorial.Models
 	[Table("Customer")]
 	public partial class Customer : IId
 	{
-		[PrimaryKey,                Identity] public long     Id               { get; set; } // integer
-		[Column,                    NotNull ] public string   FullName         { get; set; } // varchar(50)
-		[Column,                    NotNull ] public string   Phone            { get; set; } // varchar(15)
-		[Column(SkipOnInsert=true), NotNull ] public DateTime RegistrationTime { get; set; } // datetime
+		[PrimaryKey,                Identity   ] public long     Id               { get; set; } // integer
+		[Column,                    NotNull    ] public string   FullName         { get; set; } // varchar(50)
+		[Column,                    NotNull    ] public string   Phone            { get; set; } // varchar(15)
+		[Column(SkipOnInsert=true), NotNull    ] public DateTime RegistrationTime { get; set; } // datetime
+		[Column,                       Nullable] public long?    Number           { get; set; } // integer
 	}
 
 	public static partial class TableExtensions
