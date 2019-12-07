@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "linq2db.Tutorial.Sources", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{F47E393A-B766-4E92-B904-7910A63228F3}"
 	ProjectSection(SolutionItems) = preProject
+		DB\central.sqlite = DB\central.sqlite
 		DB\database.sqlite = DB\database.sqlite
 	EndProjectSection
 EndProject
