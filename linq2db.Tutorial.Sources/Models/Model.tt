@@ -8,9 +8,16 @@
 
 	NamespaceName   = "LinqToDB.Tutorial.Models";
 	DataContextName = "TutorialDataConnection";
-	BaseEntityClass = "IId";
 
 	LoadSQLiteMetadata(this.Host.ResolvePath(@"..\..\DB\"), "central.sqlite");
+
+	foreach (var t in Tables.Values)
+	{
+		if (t.Columns.ContainsKey("Id"))
+		{
+			t.BaseClass = "IId";
+		}
+	}
 
 	GetColumn("Customer", "RegistrationTime").SkipOnInsert = true;
 
